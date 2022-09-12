@@ -1,0 +1,9 @@
+<resources>
+    <string name="tfe_od_app_name" translation_description="Object Detection demo app [CHAR_LIMIT=40]">TFL Detect</string>
+    <string name="tfe_od_camera_error" translation_description="Error regarding camera support[CHAR_LIMIT=40]">This device doesn\'t support Camera2 API.</string>
+    <string name="counter_value">Значение счётчика</string>
+    <string name="value_deleted">Значение удалено!</string>
+    <string name="new_location">Новое расположение</string>
+    <string name="enter_new_location">Введите новое расположение:</string>
+    <string name="no_location_provided">Расположение не выбрано!</string>
+</resources>

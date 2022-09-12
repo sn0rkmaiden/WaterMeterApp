@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:background="@color/light_blue">
+
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar"/>
+
+    <org.tensorflow.lite.examples.detection.CustomMaterialButtonToggleGroup
+        android:id="@+id/toggle_button2"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_below="@+id/imageView"
+        android:layout_margin="10dp"
+        android:layout_centerHorizontal="true">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/detectButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:elevation="5dp"
+            app:cornerRadius="0dp"
+            app:icon="@drawable/predict"
+            app:iconSize="22sp"
+            android:textSize="22sp"
+            android:text="Считать\n показания"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/button_camera"
+            app:elevation="5dp"
+            app:cornerRadius="0dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:icon="@drawable/camera"
+            android:textSize="22sp"
+            app:iconSize="20sp"
+            android:text="Сделать фото" />
+
+    </org.tensorflow.lite.examples.detection.CustomMaterialButtonToggleGroup>
+
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="416dp"
+        android:layout_height="416dp"
+        android:layout_centerHorizontal="true"
+        tools:srcCompat="@drawable/kite" />
+
+    <org.tensorflow.lite.examples.detection.customview.OverlayView
+        android:id="@+id/tracking_overlay"
+        android:layout_width="416dp"
+        android:layout_height="0dp" />
+
+    <RelativeLayout
+        android:id="@+id/layoutMain"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/toggle_button2"
+        android:layout_above="@id/toggle_button">
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+            android:id="@+id/textInputLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:hint="Значение счётчика"
+            android:layout_margin="10dp"
+            app:startIconDrawable="@drawable/edit"
+            app:counterMaxLength="20"
+            app:counterEnabled="true"
+            app:endIconMode="clear_text"
+            android:cursorVisible="false">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/textInputEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+    </RelativeLayout>
+
+
+    <com.google.android.material.button.MaterialButtonToggleGroup
+        android:id="@+id/toggle_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="10dp"
+        android:layout_centerHorizontal="true">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/button_all_values"
+            android:layout_width="wrap_content"
+            android:layout_height="65dp"
+            app:icon="@drawable/all"
+            android:textSize="22sp"
+            app:cornerRadius="0dp"
+            android:layout_marginBottom="20dp"
+            android:text="Счётчики"
+            />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/button_save"
+            android:layout_width="wrap_content"
+            android:layout_height="65dp"
+            android:text="Сохранить"
+            android:textSize="22sp"
+            app:icon="@drawable/save"
+            app:cornerRadius="0dp"
+            app:elevation="5dp"/>
+
+    </com.google.android.material.button.MaterialButtonToggleGroup>
+
+</RelativeLayout>
